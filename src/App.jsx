@@ -16,6 +16,7 @@ function App() {
   return (
     <>
       <h1>React App</h1>
+      <h1>Eres un tonto jajsasj</h1>
       {products && products.map((product, index) => {
         return (
           <div key={index}>
