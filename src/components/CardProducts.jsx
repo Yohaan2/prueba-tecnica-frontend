@@ -21,7 +21,7 @@ const CardProducts = ({ products }) => {
           <div className={styles['card']} key={index} onClick={()=> handleModal(product)}>
             <img src={product.image} alt={product.title} />
             <div className={styles['card-container']}>
-              <h3>{product.title}</h3>
+              <h5 className={styles['text-container']}>{product.title}</h5>
               <div className={styles['price-container']}>
                 <p className={styles['price']}>
                   <span className={styles['new-price']}>{product.price}$</span>{' '}
