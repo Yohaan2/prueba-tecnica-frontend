@@ -1,31 +1,22 @@
-import { useState } from 'react';
-import axios from './utils/http';
-import { useEffect } from 'react';
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import { Navigate, RouterProvider, createBrowserRouter } from "react-router-dom";
+import Home from "./pages/Home";
+import About from "./pages/About";
+
+const router = createBrowserRouter([
+    { path: "/", element: <Navigate to="/home" replace/> },
+    { path: "/home", element: <Home /> },
+    { path: "/about", element: <About /> },
+    { path: "*", element: <Navigate to="/" /> },
+  ]
+  );
 
 function App() {
-  const [products, setProducts] = useState([]);
-  const fetch = async () => {
-    const response = await axios.get('/api/products');
-    setProducts(response.paylaod);
-  };
-
-  useEffect(() => {
-    fetch();
-  }, []);
-
+  const queryClient = new QueryClient();
   return (
-    <>
-      <h1>React App</h1>
-      <h1>Eres un tonto jajsasj</h1>
-      {products && products.map((product, index) => {
-        return (
-          <div key={index}>
-            <h2>{product.title}</h2>
-            <p>{product.description}</p>
-          </div>
-        )
-      } )}
-    </>
+    <QueryClientProvider client={queryClient}>
+      <RouterProvider router={router} />
+    </QueryClientProvider>
   )
 }
 
