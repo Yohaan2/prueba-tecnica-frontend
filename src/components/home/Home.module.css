@@ -1,0 +1,41 @@
+
+.content {
+  display: flex;
+  justify-content: center;
+  padding: 35px 0;
+  margin-left: 3rem;
+}
+
+.cards-container {
+  margin: 0 4rem;
+}
+
+@keyframes loader {
+  0% {
+    transform: scale(0);
+    opacity: 1;
+  }
+
+  100% {
+    transform: scale(1);
+    opacity: 0;
+  }
+}
+.loader::after,
+.loader::before {
+  content: "";
+  position: absolute;
+  margin: auto 29%;
+  margin-top: 50px;
+  transform: translate(-50%, -50%);
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  border: 5px solid #003C43;
+  animation: loader 2s linear infinite;
+}
+
+.loader::after {
+  opacity: 0;
+  animation-delay: 1s;
+}

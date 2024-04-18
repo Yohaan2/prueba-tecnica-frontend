@@ -3,17 +3,17 @@
     flex-wrap: wrap;
     justify-content: flex-start;
     align-items: center;
-    margin: 0 5%;
+    gap: 0.825rem;
+    width: 900px;
 }
 .card {
     color: #242424;
     width: 16.75rem;
+    height: 25.85rem;
     padding: 0.625rem;
-    margin: 0.625rem;
-    border: 0.063rem solid #ccc;
     border-radius: 0.625rem;
     overflow: hidden;
-    background-color: #f5f5f5;
+    background-color: #e8fff5;
     box-shadow: 0 0 0.625rem rgba(211, 211, 211, 0.1);
     position: relative;
     cursor: pointer;
@@ -21,13 +21,16 @@
 }
 .card:hover {
     box-shadow: 0 0 0.625rem rgba(211, 211, 211, 0.5);
-    transform: scale(1.02);
+    transform: scale(1.01);
 }
 .card img {
   width: 100%;
   height: 16.875rem;
 }
 
+img {
+    object-fit: fill;
+}
 
 .card-container {
     padding: 1.25rem;
@@ -53,6 +56,12 @@
 
 .new-price {
   color: green;
+}
+
+.not-found {
+  color: #fff6f6;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin: 25px auto;
 }
 
 @media (max-width: 480px) {

@@ -1,0 +1,44 @@
+.header{
+  position: fixed;
+  top: 0;
+  width: 100%;
+  color: #fff;
+  padding: 10px 0;
+  background-color: #003C43;
+  font-size: large;
+  font-weight: 700;
+  margin: 0;
+  z-index: 10;
+}
+.navbar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+
+  width: min(90%, 800px);
+  margin: 0 auto;
+}
+
+.nav-ul {
+  display: flex;
+  gap: 1rem;
+}
+
+li {
+  list-style: none;
+}
+
+.nav-link {
+  color: #fff;
+  text-decoration: none;
+  transition: 0.2s;
+}
+
+.nav-link:active {
+  color: #9582ff;
+}
+
+.nav-link:hover {
+  color: #00b6ce;
+}

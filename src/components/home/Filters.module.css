@@ -1,0 +1,40 @@
+.container {
+  display: flex;
+  justify-content: center;
+  width: 320px;
+  height: 500px;
+  border-radius: 0.625rem;
+  background-color: #003C43;
+  box-shadow: 0 0 0.5rem rgba(211, 211, 211, 0.5);
+  color:#242424;
+  color: #ccc;
+}
+
+.container-select {
+  width: 100%;
+  margin: 2rem 1rem;
+}
+
+.select {
+  width: 100%;
+  padding: 0.625rem;
+  border: 0.063rem solid #ccc;
+  border-radius: 0.625rem;
+  background-color: #f2f4ee;
+  color: #242424;
+  box-sizing: border-box;
+  cursor: pointer;
+}
+
+.select:focus{ outline: none;}
+
+.input-search {
+  width: 100%;
+  padding: 0.625rem;
+  border: 0.063rem solid #ccc;
+  border-radius: 0.625rem;
+  background-color: #f2f4ee;
+  color: #242424;
+  box-sizing: border-box;
+}
+.input-search:focus{ outline: none;}

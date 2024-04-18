@@ -17,7 +17,7 @@ const CardProducts = ({ products }) => {
   return (
     <div className={styles['cards']}>
       {
-        products?.paylaod?.map((product, index) => (
+        products?.payload?.map((product, index) => (
           <div className={styles['card']} key={index} onClick={()=> handleModal(product)}>
             <img src={product.image} alt={product.title} />
             <div className={styles['card-container']}>
@@ -32,6 +32,9 @@ const CardProducts = ({ products }) => {
           </div>
         ))
       }
+      {products?.payload?.length === 0 && (
+        <h2 className={styles['not-found']}>No more results were found</h2>
+      )}
     </div>
   )
 }

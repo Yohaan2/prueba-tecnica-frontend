@@ -1,16 +1,34 @@
-import CardProducts from "../components/CardProducts";
+import CardProducts from "../components/home/CardProducts";
 import { useGetAllProducts } from "../hooks/useProducts";
+import styles from '../components/home/Home.module.css'
+import Filters from "../components/home/Filters";
+import { useEffect, useState } from "react";
 
 export default function Home() {
-  const { data: products, isLoading } = useGetAllProducts({ start: 0, limit: 10 });
-  console.log(products)
+  const [ nameSearch, setNameSearch ] = useState(null);
+  const { data: products, isLoading, refetch  } = useGetAllProducts({ start: 0, limit: 12, title: nameSearch?.title, category: nameSearch?.category});
+  console.log(nameSearch)
+
+  useEffect(() => {
+    if(nameSearch?.name?.length === 0 ) {
+      refetch()
+    }
+  }, [nameSearch, refetch])
+
   return (
-    <>
+    <div className={styles['container']}>
       <h1>React App</h1>
-      {isLoading && <p>Loading...</p>}
-        <CardProducts 
-          products={products}
+      <div className={styles['content']}>
+        <Filters
+          setNameSearch={setNameSearch}
         />
-    </>
+        <div className={styles['cards-container']}>
+        {isLoading && <span className={styles['loader']}></span>}
+          <CardProducts 
+            products={products}
+          />
+        </div>
+      </div>
+    </div>
   )
 }
