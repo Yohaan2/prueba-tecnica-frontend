@@ -7,7 +7,6 @@ import { useEffect, useState } from "react";
 export default function Home() {
   const [ nameSearch, setNameSearch ] = useState(null);
   const { data: products, isLoading, refetch  } = useGetAllProducts({ start: 0, limit: 12, title: nameSearch?.title, category: nameSearch?.category});
-  console.log(nameSearch)
 
   useEffect(() => {
     if(nameSearch?.name?.length === 0 ) {

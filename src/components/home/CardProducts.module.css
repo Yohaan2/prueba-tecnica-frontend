@@ -7,7 +7,10 @@
     width: 900px;
 }
 .card {
-    color: #242424;
+    color: #5a5a5a;
+    font-family: sans-serif;
+    font-size: 18px;
+    line-height: 14px;
     width: 16.75rem;
     height: 25.85rem;
     padding: 0.625rem;

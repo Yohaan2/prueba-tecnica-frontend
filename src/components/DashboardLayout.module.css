@@ -1,14 +1,16 @@
 .header{
-  position: fixed;
+  position: sticky;
   top: 0;
   width: 100%;
   color: #fff;
   padding: 10px 0;
   background-color: #003C43;
+  border-radius: 0 0 5px 5px;
   font-size: large;
   font-weight: 700;
   margin: 0;
   z-index: 10;
+  box-shadow: 0 0 15px 4px rgba(0,0,0,0.49);
 }
 .navbar {
   display: flex;
@@ -29,16 +31,41 @@ li {
   list-style: none;
 }
 
+.nav-li {
+  position: relative;
+}
+
 .nav-link {
-  color: #fff;
+  color:#fff;
+  position: relative;
   text-decoration: none;
-  transition: 0.2s;
 }
 
-.nav-link:active {
-  color: #9582ff;
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: -3px;
+  left: 0;
+  width: 0;
+  height: 3px;
+  background-color: #fff; 
+  transition: width 0.3s;
+}
+.nav-link.active::after {
+  content: '';
+  position: absolute;
+  bottom: -3px;
+  left: 0;
+  width: 50%;
+  height: 3px;
+  background-color: #fff; 
+  transition: width 0.3s;
 }
 
-.nav-link:hover {
-  color: #00b6ce;
+.nav-link.active:hover::after {
+  width: 50%;
+}
+
+.nav-link:hover::after {
+  width: 100%;
 }
