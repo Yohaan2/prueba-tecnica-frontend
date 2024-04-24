@@ -3,7 +3,7 @@
   display: flex;
   justify-content: space-between;
   text-align: center;
-  background-color: rgb(30, 255, 0);
+  margin-top: 45px;
 }
 
 .pagination-next, 
@@ -22,20 +22,23 @@
   outline: none;
   text-decoration: none;
   text-align: center;
-  color: black;
-  background: yellow;
+  color: #ccc;
+  background: #003C43;
   border-radius: 0.375rem;
-  border: 1px solid hsl(221, 14%,calc(24% + 10%));
+  border: 1px solid #0b4e55;
+  transition: background-color .4s;
+  box-shadow:  0 .0625em .125em hsla(0, 0%, 20%, 0.05);
 }
 
 
 .pagination-next:hover, 
 .pagination-previous:hover,
 .pagination-link:hover {
-  background-color: orange;
+  background-color: #00535c;
+  border-color: #0b4e55;
 }
 .pagination-list {
   display: flex;
   justify-content: center;
-  gap: 20px
+  gap: 12px
 }
