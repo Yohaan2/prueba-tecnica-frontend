@@ -1,63 +1,71 @@
-.cards {
-    display: flex;
-    flex-wrap: wrap;
+.container {
+    display: grid;
+    grid-template-columns: repeat(3,300px);
     justify-content: flex-start;
-    align-items: center;
-    gap: 0.825rem;
-    width: 900px;
+    gap: 1rem;
 }
-.card {
+.items {
     color: #5a5a5a;
     font-family: sans-serif;
-    font-size: 18px;
-    line-height: 14px;
-    width: 16.75rem;
-    height: 25.85rem;
-    padding: 0.625rem;
-    border-radius: 0.625rem;
-    overflow: hidden;
-    background-color: #e8fff5;
+    background-color: #d9eee6;
+    border: solid thin #c1d4cd;
     box-shadow: 0 0 0.625rem rgba(211, 211, 211, 0.1);
+    transition: 0.2s;
     position: relative;
-    cursor: pointer;
-    transition: 0.3s;
-}
-.card:hover {
+  }
+  .items:hover {
     box-shadow: 0 0 0.625rem rgba(100, 100, 100, 0.7);
+  }
+  .items img {
+    width: 100%;
+    height: 190px;
+  }
+  .items-container{
+  padding: 15px;
 }
-.card img {
-  width: 100%;
-  height: 16.875rem;
+.text-container {
+  font-size: 15px;
+  letter-spacing: -1px;
 }
-
-img {
-    object-fit: contain;
-}
-
-.card-container {
-    padding: 1.25rem;
-}
-
-.price-container {
-  position: absolute;
-  bottom: 0.938rem;
-  left: auto;
-  font-size: 1.563rem;
-}
-
-.price {
-    font-weight: bold;
-    margin: 0;
+.items-container .text-container,
+.items-container p {
+  margin-bottom: 15px;
 }
 
 .old-price {
     text-decoration: line-through;
     color: #999;
+    font-size: 18px;
     margin-right: 0.625rem;
 }
 
 .new-price {
+  font-size: 16px;
   color: green;
+} 
+
+.price-container {
+  display: flex;
+  justify-content: space-between;
+  font-weight: bolder;
+}
+
+.add-card-button {
+  padding: 12px;
+  width: 100%;
+  outline: none;
+  border-radius: 5px;
+  border: none;
+  background-color: #10656e;
+  color: #fff6f6;
+  text-transform: uppercase;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color .2s;
+  margin-top: 10px;
+}
+.items-container button:hover {
+  background-color: #014850;
 }
 
 .not-found {
@@ -81,7 +89,7 @@ img {
   height: 120px;
 }
 
-  .card-container {
+  .items-container {
     padding: 0;
   }
 

@@ -3,6 +3,7 @@ import { useGetAllProducts } from "../hooks/useProducts";
 import styles from '../components/home/Home.module.css'
 import Filters from "../components/home/Filters";
 import { useEffect, useState } from "react";
+import Pagination from "../components/Pagination";
 
 export default function Home() {
   const [ nameSearch, setNameSearch ] = useState(null);
@@ -16,7 +17,6 @@ export default function Home() {
 
   return (
     <div className={styles['container']}>
-      <h1>React App</h1>
       <div className={styles['content']}>
         <Filters
           setNameSearch={setNameSearch}
@@ -26,6 +26,8 @@ export default function Home() {
           <CardProducts 
             products={products}
           />
+          
+          <Pagination />
         </div>
       </div>
     </div>
